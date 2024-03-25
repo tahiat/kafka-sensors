@@ -1,0 +1,33 @@
+error: Error in AnnotatedTypeMirror.fromExpression(KeyForAnnotatedTypeFactory, new byte[AVRO_MAGIC.length]): null
+  ; The Checker Framework crashed.  Please report the crash.
+  Compilation unit: src/main/java/com/fillmore_labs/kafka/sensors/serde/confluent/interop/Avro2Confluent.java
+  Last visited tree at line 22 column 1:
+  public final class Avro2Confluent {
+  Exception: java.lang.StackOverflowError; java.lang.StackOverflowError
+    at org.checkerframework.framework.type.AnnotatedTypeCopier.visitPrimitive(AnnotatedTypeCopier.java:43)
+    at org.checkerframework.framework.type.AnnotatedTypeMirror$AnnotatedPrimitiveType.accept(AnnotatedTypeMirror.java:1915)
+    at org.checkerframework.framework.type.AnnotatedTypeCopier.visit(AnnotatedTypeCopier.java:94)
+    at org.checkerframework.framework.type.AnnotatedTypeMirror$AnnotatedPrimitiveType.deepCopy(AnnotatedTypeMirror.java:1925)
+    at org.checkerframework.framework.type.AnnotatedTypeMirror$AnnotatedPrimitiveType.deepCopy(AnnotatedTypeMirror.java:1930)
+    at org.checkerframework.framework.type.AnnotatedTypeMirror$AnnotatedPrimitiveType.deepCopy(AnnotatedTypeMirror.java:1907)
+    at org.checkerframework.framework.type.AnnotatedTypeFactory.fromTypeTree(AnnotatedTypeFactory.java:1714)
+    at org.checkerframework.framework.type.TypeFromExpressionVisitor.annotateArrayAsArray(TypeFromExpressionVisitor.java:321)
+    at org.checkerframework.framework.type.TypeFromExpressionVisitor.visitNewArray(TypeFromExpressionVisitor.java:297)
+    at org.checkerframework.framework.type.TypeFromExpressionVisitor.visitNewArray(TypeFromExpressionVisitor.java:75)
+    at org.checkerframework.framework.type.TypeFromTree.fromExpression(TypeFromTree.java:40)
+    at org.checkerframework.framework.type.AnnotatedTypeFactory.fromExpression(AnnotatedTypeFactory.java:1686)
+    at org.checkerframework.framework.type.AnnotatedTypeFactory.getAnnotatedType(AnnotatedTypeFactory.java:1356)
+    at org.checkerframework.framework.type.TypeFromMemberVisitor.visitVariable(TypeFromMemberVisitor.java:42)
+    at org.checkerframework.framework.type.TypeFromMemberVisitor.visitVariable(TypeFromMemberVisitor.java:28)
+    at org.checkerframework.framework.type.TypeFromTree.fromMember(TypeFromTree.java:63)
+    at org.checkerframework.framework.type.AnnotatedTypeFactory.fromMember(AnnotatedTypeFactory.java:1591)
+    at org.checkerframework.framework.type.AnnotatedTypeFactory.getAnnotatedType(AnnotatedTypeFactory.java:1353)
+    at org.checkerframework.framework.type.treeannotator.PropagationTreeAnnotator.visitNewArray(PropagationTreeAnnotator.java:107)
+    at org.checkerframework.framework.type.treeannotator.PropagationTreeAnnotator.visitNewArray(PropagationTreeAnnotator.java:42)
+    at org.checkerframework.framework.type.treeannotator.ListTreeAnnotator.defaultAction(ListTreeAnnotator.java:52)
+    at org.checkerframework.framework.type.treeannotator.ListTreeAnnotator.defaultAction(ListTreeAnnotator.java:20)
+    at org.checkerframework.framework.type.GenericAnnotatedTypeFactory.addComputedTypeAnnotations(GenericAnnotatedTypeFactory.java:1860)
+    at org.checkerframework.framework.type.GenericAnnotatedTypeFactory.addComputedTypeAnnotations(GenericAnnotatedTypeFactory.java:1787)
+    at org.checkerframework.framework.type.AnnotatedTypeFactory.getAnnotatedType(AnnotatedTypeFactory.java:1369)
+    at org.checkerframework.framework.type.TypeFromMemberVisitor.visitVariable(TypeFromMemberVisitor.java:42)
+    at org.checkerframework.framework.type.TypeFromMemberVisitor.visitVariable(TypeFromMemberVisitor.java:28)
