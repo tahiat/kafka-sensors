@@ -1,0 +1,70 @@
+apply plugin: 'base'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    toCopy
+}
+
+dependencies {
+    toCopy "com.amazon.ion:ion-java:1.9.6"
+    toCopy 'com.fasterxml.jackson.core:jackson-annotations:2.15.2'
+    toCopy "com.fasterxml.jackson.core:jackson-core:2.15.2"
+    toCopy "com.fasterxml.jackson.core:jackson-databind:2.15.2"
+    toCopy "com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.15.2"
+    toCopy "com.fasterxml.jackson.datatype:jackson-datatype-guava:2.15.2"
+    toCopy "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.2"
+    toCopy "com.fasterxml.jackson.datatype:jackson-datatype-joda:2.15.2"
+    toCopy "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.2"
+    toCopy "com.fasterxml.jackson.module:jackson-module-blackbird:2.15.2"
+    toCopy "com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.2"
+    toCopy "com.fasterxml.jackson.module:jackson-module-scala_2.13:2.15.2"
+    toCopy "com.fasterxml.woodstox:woodstox-core:6.5.1"
+    toCopy "com.google.code.findbugs:jsr305:3.0.2"
+    toCopy "com.google.code.gson:gson:2.10.1"
+    toCopy "com.google.errorprone:error_prone_annotations:2.19.1"
+    toCopy "com.google.flogger:flogger-system-backend:0.7.4"
+    toCopy "com.google.flogger:flogger:0.7.4"
+    toCopy "com.google.guava:guava:32.0.1-jre"
+    toCopy "com.google.j2objc:j2objc-annotations:2.8"
+    toCopy "com.sun.istack:istack-commons-runtime:4.2.0"
+    toCopy "info.picocli:picocli:4.7.4"
+    toCopy "io.github.classgraph:classgraph:4.8.160"
+    toCopy "io.github.toolfactory:jvm-driver:9.4.3"
+    toCopy "io.helidon.config:helidon-config-object-mapping:3.2.1"
+    toCopy "io.helidon.config:helidon-config-yaml:3.2.1"
+    toCopy "io.helidon.config:helidon-config:3.2.1"
+    toCopy "jakarta.annotation:jakarta.annotation-api:2.1.1"
+    toCopy "jakarta.inject:jakarta.inject-api:2.0.1"
+    toCopy "jakarta.xml.bind:jakarta.xml.bind-api:4.0.0"
+    toCopy "javax.inject:javax.inject:1"
+    toCopy "org.apache.avro:avro:1.11.1"
+    toCopy "org.apache.kafka:kafka-clients:3.5.0"
+    toCopy "org.apache.kafka:kafka-raft:3.5.0"
+    toCopy "org.apache.kafka:kafka-server-common:3.5.0"
+    toCopy "org.apache.kafka:kafka-streams:3.5.0"
+    toCopy "org.apache.kafka:kafka_2.13:3.5.0"
+    toCopy "org.apache.thrift:libthrift:0.18.1"
+    toCopy "org.checkerframework:checker-qual:3.35.0"
+    toCopy "org.checkerframework:checker-util:3.34.0"
+    toCopy "org.checkerframework:checker:3.35.0"
+    toCopy "org.glassfish.jaxb:jaxb-runtime:4.0.3"
+    toCopy "org.immutables:gson:2.9.3"
+    toCopy "org.immutables:value-annotations:2.9.3"
+    toCopy "org.immutables:value-processor:2.9.3"
+    toCopy "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22"
+    toCopy "org.mapstruct:mapstruct-processor:1.5.5.Final"
+    toCopy "org.mapstruct:mapstruct:1.5.5.Final"
+    toCopy "org.openjdk.jmh:jmh-core:1.36"
+    toCopy "org.openjdk.jmh:jmh-generator-annprocess:1.36"
+    toCopy "org.rocksdb:rocksdbjni:8.1.1.1"
+    toCopy "org.slf4j:slf4j-api:2.0.7"
+    toCopy "org.slf4j:slf4j-jdk14:2.0.7"
+}
+
+task pullJar(type: Copy) {
+    from configurations.toCopy 
+    into 'libs'
+}
